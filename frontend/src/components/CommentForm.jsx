@@ -11,7 +11,7 @@ const CommentForm = ({blogId}) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     sendingComment(true);
-    fetch(`http://localhost:3000/api/blogs/${blogId}/comment`, {
+    fetch(`${process.env.REACT_APP_API_URL}/api/blogs/${blogId}/comment`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

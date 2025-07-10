@@ -8,7 +8,7 @@ const Blog = ({blog}) => {
   const { updateBlog, deleteBlog } = useContext(BlogContext);
 
   const handleLike = () => {
-    fetch(`http://localhost:3000/api/blogs/${blog._id}/like`, {
+    fetch(`${process.env.REACT_APP_API_URL}/api/blogs/${blog._id}/like`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -21,7 +21,7 @@ const Blog = ({blog}) => {
   }
 
   const handleDelete = () => {
-    fetch(`http://localhost:3000/api/blogs/${blog._id}`, {
+    fetch(`${process.env.REACT_APP_API_URL}/api/blogs/${blog._id}`, {
       method: "DELETE"
     })
     .then(() => {

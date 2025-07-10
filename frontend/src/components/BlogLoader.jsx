@@ -8,7 +8,7 @@ const BlogLoader = ({children}) => {
 
   useEffect(() => {
     setLoading(true);
-    fetch("http://localhost:3000/api/blogs")
+    fetch("${process.env.REACT_APP_API_URL}/api/blogs")
     .then((res) => res.json())
     .then((resJson) => {
       setBlogs(resJson.blogs);

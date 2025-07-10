@@ -15,7 +15,7 @@ const CreateBlog = () => {
     const content = contentRef.current.value;
     const author = authorRef.current.value;
 
-    fetch("http://localhost:3000/api/blogs", {
+    fetch("${process.env.REACT_APP_API_URL}/api/blogs", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
